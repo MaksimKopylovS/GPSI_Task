@@ -2,10 +2,16 @@ package com.gspi.task;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.gspi.task.model.ProjectTask;
 import com.gspi.task.service.ProjectTaskService;
 
 import java.util.*;
+
+/* Добрый день уважаемые разработчики РОСАТОМа
+ *  подготовил для Вас решение тестового задания.
+ *
+ *  Если вас не затруднит, опишите, пожалуйста, допущенные мною ошибки,
+ *  буду вам очень признателен.
+ * */
 
 public class Application {
 
@@ -35,7 +41,7 @@ public class Application {
 
         new ProjectTaskService().creatListProjectTaskModel(jsonRequest).forEach(System.out::println);
 
-        List<HashMap<String,String>> list = Arrays.asList(new ObjectMapper().readValue(jsonRequest, HashMap[].class));
+        List<HashMap<String, String>> list = Arrays.asList(new ObjectMapper().readValue(jsonRequest, HashMap[].class));
         System.out.println("Метод 1.\nУникальных пользователей - " + new ProjectTaskService().numberOfUniqueEmployees(list));
         System.out.println("Метод 2.\nУникальных пользователей - " + new ProjectTaskService().numberOfUniqueEmployeesTwo(list));
     }
